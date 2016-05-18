@@ -11,6 +11,8 @@ initMain(){
 setTerminal
 resizeWindow
 setWindowTitle
+setTerminalColors
+setTerminalTextEffects
 setPermissions
 setDependencies
 checkDependencies
@@ -81,6 +83,68 @@ runDirectory="$PWD"
 
 count="0"
 padding=""
+
+}
+
+
+setTerminalColors(){
+
+	currentTask="setTerminalColors"
+
+	# Foreground Colors
+	defaultFG=$(echo 'printf' '\033[39m')
+	
+	black=$(echo 'printf' '\033[30m')
+	blue=$(echo 'printf' '\033[34m')
+	cyan=$(echo 'printf' '\033[36m')
+	darkGrey=$(echo 'printf' '\033[90m')
+	green=$(echo 'printf' '\033[32m')
+	lightBlue=$(echo 'printf' '\033[94m')
+	lightCyan=$(echo 'printf' '\033[96m')
+	lightGreen=$(echo 'printf' '\033[92m')
+	lightGrey=$(echo 'printf' '\033[37m')
+	lightMagenta=$(echo 'printf' '\033[95m')
+	lightRed=$(echo 'printf' '\033[91m')
+	lightYellow=$(echo 'printf' '\033[93m')
+	magenta=$(echo 'printf' '\033[35m')
+	red=$(echo 'printf' '\033[31m')
+	white=$(echo 'printf' '\033[0m')
+	whiteAlt=$(echo 'printf' '\033[97m')
+	yellow=$(echo 'printf' '\033[33m')
+	
+	# Background Colors
+	defaultBG=$(echo 'printf' '\033[49m')
+	
+	blackBG=$(echo 'printf' '\033[40m')
+	blueBG=$(echo 'printf' '\033[44m')
+	cyanBG=$(echo 'printf' '\033[46m')
+	darkGreyBG=$(echo 'printf' '\033[100m')
+	greenBG=$(echo 'printf' '\033[42m')
+	lightBlueBG=$(echo 'printf' '\033[104m')
+	lightCyanBG=$(echo 'printf' '\033[106m')
+	lightGreenBG=$(echo 'printf' '\033[102m')
+	lightGreyBG=$(echo 'printf' '\033[47m')
+	lightMagentaBG=$(echo 'printf' '\033[105m')
+	lightRedBG=$(echo 'printf' '\033[101m')
+	lightYellowBG=$(echo 'printf' '\033[103m')
+	magentaBG=$(echo 'printf' '\033[45m')
+	redBG=$(echo 'printf' '\033[41m')
+	whiteBG=$(echo 'printf' '\033[107m')
+	yellowBG=$(echo 'printf' '\033[43m')
+
+}
+
+
+setTerminalTextEffects(){
+
+	currentTask="setTerminalTextEffects"
+
+	textBlink=$(echo -e "\e[5m")
+	textBold=$(echo -e "\e[1m")
+	textDim=$(echo -e "\e[2m")
+	textHidden=$(echo -e "\e[8m")
+	textInverted=$(echo -e "\e[7m")
+	textUnderline=$(echo -e "\e[4m")
 
 }
 
